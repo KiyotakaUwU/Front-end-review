@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;700&family=Montserrat:wght@300;500;700&display=swap");
+
+:root {
+  --text-color: #f2f2f2;
+  --darker-color: #000;
+  --back-color: #222;
+  --add-color: #333;
+  --padd-color: #444;
+  --deco-color: #00ffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Inconsolate", sans-serif;
+  background-color: var(--back-color);
+  color: var(--text-color);
+}
+
+.logo img {
+  width: 80px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+.nav-bar .links ul li a {
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-size: 0% 2px;
+  transition: all 0.9s;
+  padding: 30px;
+  border-radius: 25px;
+}
+.nav-bar .links ul li a:hover {
+  background-color: var(--padd-color);
+}
+.nav-bar .media a {
+  padding: 0 10px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+.nav-bar .media a:nth-child(1) {
+  color: var(--deco-color);
+}
+.nav-bar .media a:nth-child(3) {
+  color: var(--deco-color);
+}
+.nav-bar .media span.material-icons {
+  font-size: 35px;
+  transition: all 0.5s;
+}
+.nav-bar .media span.material-icons:hover {
+  transform: scale(1.5);
+}
+.nav-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar .links ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.main-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-menu i {
+  color: var(--deco-color);
+  font-size: 35px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.main-menu i:hover {
+  transform: scale(1.5);
+}
+
+/* ------------------------------------ */
+
+#services {
+  background-color: var(--add-color);
+  height: 100vh;
+  padding: 40px;
+}
+.title {
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+}
+.subtitle {
+  color: var(--deco-color);
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 20px;
+}
+.services-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.services-offers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "rice img li"
+    "meats img fishery";
+}
+.mid-img {
+  grid-column: img;
+  grid-row: img;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.mid-img:hover {
+  transform: scale(1.2);
+}
+.mid-img img {
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+  border: 2px solid var(--deco-color);
+  object-fit: cover;
+  object-position: center center;
+}
+
+.blender {
+  grid-column: li;
+  grid-row: li;
+}
+.fishery {
+  grid-column: fishery;
+  grid-row: fishery;
+}
+.meats {
+  grid-column: meats;
+  grid-row: meats;
+}
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.items .item-title {
+  color: var(--text-color);
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.items .item-description {
+  color: var(--deco-color);
+  font-size: 15px;
+  padding: 0 20px;
+}
+.items span.material-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--deco-color);
+  font-size: 40px;
+  border: 7px double var(--text-color);
+  border-radius: 50%;
+}
+.items span.material-icons:hover {
+  background-color: var(--darker-color);
+}
+
+/* --------------------------------------------- */
+
+#services-carousel .main-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  z-index: 0;
+}
+.slider {
+  display: flex;
+  overflow: hidden;
+  height: calc(100vh - 80px);
+  scroll-behavior: smooth;
+}
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+.services-description {
+  width: 30%;
+}
+.services-description h1 {
+  text-transform: lowercase;
+  font-size: 2.2vw;
+  font-weight: 100;
+}
+.services-description h2 {
+  text-transform: lowercase;
+  font-size: 5vw;
+  font-weight: 600;
+}
+.services-description p {
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.services-image {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+}
+.services-image img {
+  max-width: 90%;
+  margin-bottom: 10px;
+  transform: scale(1.1);
+  border-radius: 40px;
+  transition: all 0.5s;
+}
+.services-container:hover .services-image img {
+  transform: scale(1.2);
+}
+
+.btn {
+  border-radius: 0px 40px 40px 0px;
+  background-color: var(--deco-color);
+  font-size: 15px;
+  color: var(--darker-color);
+  font-weight: 700;
+  padding: 10px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+}
+.btn:hover {
+  padding: 10px 40px;
+  border-radius: 40px;
+}
+.btn span {
+  position: relative;
+  top: 6px;
+  left: 8px;
+}
+
+.main-container #left-btn,
+.main-container #right-btn {
+  position: absolute;
+  height: 10%;
+  width: 50px;
+  border: transparent;
+  cursor: pointer;
+  margin: 0 15px;
+  outline: none;
+  z-index: 500;
+  transition: all 0.3s;
+}
+.main-container #left-btn {
+  left: 0;
+}
+.main-container #right-btn {
+  right: 0;
+}
+.main-container #left-btn:hover,
+.main-container #right-btn:hover {
+  background-color: var(--deco-color);
+  color: var(--darker-color);
+  transform: translateY(5px);
+}
+
+.main-container #left-btn span.material-icons {
+  color: var(--darker-color);
+  transform: rotate(180deg);
+  font-size: 30px;
+}
+.main-container #right-btn span.material-icons {
+  color: var(--darker-color);
+  font-size: 30px;
+}
+
+/* ------------------------------------------------------ */
+
+@media screen and (max-width: 600px) {
+  #services {
+    height: 150vh !important;
+  }
+  .main-menu {
+    margin-top: 0;
+    position: fixed;
+  }
+  .nav-bar {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--deco-color);
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    margin-top: 75px;
+    border-radius: 0px 0px 0px 300px;
+    transform: translateX(100%);
+  }
+  .nav-bar.active {
+    transform: translateX(0%);
+  }
+  .nav-bar .links ul li {
+    display: block;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  .nav-bar .links ul li a {
+    font-size: 18px;
+  }
+  .nav-bar .links span.material-icons {
+    margin-bottom: 200px;
+    font-size: 40px;
+  }
+  .main-menu i {
+    display: block;
+  }
+
+  .mid-img img {
+    display: none;
+  }
+}
